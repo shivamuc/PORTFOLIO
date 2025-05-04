@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Singh - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ff0000;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+        }
+        .cursor.grow {
+            transform: scale(1.5);
+            border-color: #00ff00;
+        }
+        section {
+            min-height: 100vh;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 1rem;
+            border-radius: 1rem;
+        }
+        .skill-item {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .skill-item.zoomed {
+            transform: scale(1.2);
+        }
+        .resume-button {
+            background-color: #ff0000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .resume-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <header class="fixed top-0 w-full bg-black bg-opacity-80 p-4 z-20">
+        <nav class="flex justify-center space-x-6 text-lg">
+            <a href="#home" class="text-white hover:text-red-500">Home</a>
+            <a href="#about" class="text-white hover:text-red-500">About</a>
+            <a href="#academics" class="text-white hover:text-red-500">Academics</a>
+            <a href="#skills" class="text-white hover:text-red-500">Skills</a>
+            <a href="#resume" class="text-white hover:text-red-500">Resume</a>
+            <a href="#contact" class="text-white hover:text-red-500">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-6xl font-bold mb-4">Shivam Singh</h1>
+            <p class="text-3xl">Backend Developer | BTech ECE Student</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="text-5xl font-bold mb-6">About Me</h2>
+        <p class="text-xl">
+            I am Shivam Singh, a BTech student in Electronics and Communication Engineering at Dronacharya College of Engineering, Gurugram. Passionate about backend development, I specialize in building robust and scalable web applications. My focus is on creating efficient server-side solutions that power seamless user experiences.
+        </p>
+    </section>
+
+    <section id="academics">
+        <h2 class="text-5xl font-bold mb-6">Academics</h2>
+        <ul class="text-xl space-y-4">
+            <li>
+                <strong>BTech in Electronics and Communication Engineering</strong><br>
+                Dronacharya College of Engineering, Gurugram<br>
+                2021 - Present
+            </li>
+            <li>
+                <strong>Class XII (High School)</strong><br>
+                GLOBAL INTERNATIONAL SCHOOL, MUZAFFARPUR<br>
+                2022 - [Percentage= 85%]
+            </li>
+            <li>
+                <strong>Relevant Coursework</strong><br>
+                Data Structures, Algorithms, Database Management Systems, Web Development
+            </li>
+        </ul>
+        <p class="text-xl mt-4">
+            
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2 class="text-5xl font-bold mb-6">Skills</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xl">
+            <li class="bg-gray-800 p-4 rounded skill-item">Node.js</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Express.js</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Python (Django, Flask)</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Database Management (MySQL, MongoDB)</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">RESTful API Development</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Authentication (JWT, OAuth)</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Docker</li>
+            <li class="bg-gray-800 p-4 rounded skill-item">Git & Version Control</li>
+        </ul>
+    </section>
+
+    <section id="resume">
+        <h2 class="text-5xl font-bold mb-6">Resume</h2>
+        <p class="text-xl mb-4">
+            Download my resume to learn more about my skills and experience.
+        </p>
+        <a href="" class="resume-button text-white text-xl inline-block">Download Resume</a>
+        <p class="text-xl mt-4">
+            Note: Replace the '#' in the download link with the actual path to your resume PDF file.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2 class="text-5xl font-bold mb-6">Contact</h2>
+        <p class="text-xl">Email: shivam841417@gmail.com</p>
+        <p class="text-xl">LinkedIn: <a href="https://www.linkedin.com/in/shivam-singh-170574279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-blue-400 hover:underline">linkedin.com/in/shivam singh</a></p>
+        <p class="text-xl">GitHub: <a href="#" class="text-blue-400 hover:underline">github.com/shivam-singh</a></p>
+    </section>
+
+    <script>
+        // Cursor Animation
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.addEventListener('mousedown', () => cursor.classList.add('grow'));
+        document.addEventListener('mouseup', () => cursor.classList.remove('grow'));
+
+        // Zoom-In on Skill Click
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('zoomed');
+            });
+        });
+    </script>
+</body>
+</html>
